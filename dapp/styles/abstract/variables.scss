@@ -1,0 +1,22 @@
+@forward './function.scss';
+
+$max-width: 1200px;
+
+// font sizes;
+$font-size1: clamp(rem(17), 2vw + rem(1), rem(21));
+$font-size2: rem(21);
+$font-size3: rem(80);
+
+// paddings
+$padding-small: 1.5rem;
+$padding-medium: 3rem;
+
+// margins
+$margin-big: 10rem;
+$margin-medium: 5rem;
+$margin-small: 3rem;
+$margin-tiny: 1.7rem;
+$margin-veryTiny: 1rem;
+
+// border-radius
+$border-radius: 5px;

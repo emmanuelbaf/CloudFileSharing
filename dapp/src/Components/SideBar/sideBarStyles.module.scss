@@ -1,0 +1,98 @@
+@use '../../../styles/abstract/' as a;
+
+.sideBar {
+  width: 100%;
+  height: 100%;
+  // background: #1e88e5;
+  background: hwb(233 16% 42% / 0.69);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__linksContainer {
+    width: 100%;
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: auto;
+    margin-top: 0;
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+    padding-left: a.$padding-medium;
+    padding-block: 1.1rem;
+    position: relative;
+    transition: all 0.3s;
+    &:not(:last-child) {
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  &__link:hover {
+    background: #283593;
+  }
+
+  &__linkItem {
+    margin-top: 0;
+    display: flex;
+    @include a.centerItem;
+    justify-content: flex-start;
+    gap: 1.3rem;
+  }
+
+  &__IconContainer,
+  &__linkText {
+    display: block;
+  }
+
+  &__IconContainer {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  &__linkText {
+    font-size: 1.05rem;
+    font-weight: a.weight(bold);
+  }
+
+  &__foot {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 0;
+    margin-right: auto;
+    padding-left: a.$padding-medium;
+    padding-block: 1.5rem;
+    background: #283593;
+    @include a.centerItem;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background: #3e4cb6;
+    }
+  }
+
+  &__footText,
+  &__footImg {
+    display: block;
+    font-weight: a.weight(bold);
+  }
+
+  &__footText {
+    margin-left: 1rem;
+  }
+
+  &__footImg {
+    height: 1rem;
+    width: 1rem;
+  }
+}

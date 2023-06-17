@@ -1,0 +1,26 @@
+@use '../../../styles/abstract/' as a;
+
+.fileContainer {
+  width: 100%;
+  height: 13vh;
+  display: flex;
+  @include a.centerItem;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #e8eaf6;
+  padding-top: a.$padding-small;
+  padding-left: a.$padding-small;
+  padding-right: a.$padding-small;
+  @include a.breakpoint(tablet) {
+    padding-right: a.$padding-medium;
+  }
+
+  &__uploadFileContainer {
+    margin-right: auto;
+  }
+
+  &__search {
+    height: 2.5rem;
+    width: 30%;
+  }
+}

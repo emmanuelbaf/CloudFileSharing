@@ -1,0 +1,23 @@
+@use '../../../styles/abstract/' as a;
+
+.dashboardContainer {
+  width: 100%;
+  min-height: calc(100vh - a.rem(104));
+  display: grid;
+  grid-template-columns: a.rem(280) 1fr;
+  grid-template-rows: 1fr;
+
+  &__aside {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+  }
+
+  &__section {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    display: flex;
+    @include a.centerItem;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

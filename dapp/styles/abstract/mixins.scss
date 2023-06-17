@@ -1,0 +1,53 @@
+@use './breakpoints.scss';
+@use './function.scss';
+
+@mixin transition {
+  transition: all 0.25s ease-in;
+}
+
+@mixin centerItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button {
+  height: 100%;
+  width: 100%;
+  padding: 0.5em;
+  padding-inline: 1em;
+  background: var(--Button);
+  outline: none;
+  border: none;
+  border-radius: inherit;
+  color: var(--secondary-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: inherit;
+  &:hover {
+    background: var(--ButtonHover);
+    cursor: pointer;
+  }
+}
+
+@mixin animation-move-up {
+  @keyframes moveUp {
+    0% {
+      opacity: 0;
+      transform: translateY(rem(170));
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(rem(0));
+    }
+  }
+}
+
+@mixin notVisible {
+  opacity: 0;
+  // transform: translateY(rem(40));
+  transition: opacity 1s ease, transform 1s ease;
+}

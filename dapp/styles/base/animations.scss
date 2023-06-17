@@ -1,0 +1,13 @@
+@use '../abstract/' as a;
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(a.rem(170));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(a.rem(0));
+  }
+}

@@ -1,52 +1,44 @@
-import { ConnectWallet } from "@thirdweb-dev/react";
-import "./styles/Home.css";
+// App.js
+import React from 'react';
+import { useAddress } from '@thirdweb-dev/react';
+import GeneralLayout from './Components/GeneralLayout';
+import HomePage from './pages/HomePage';
+import Dashboard from './pages/Dashboard';
+import DashBoardLayout from './pages/DashBoardLayout';
+import Errorpage from './pages/ErrorPage';
+import AboutPage from './pages/AboutPage';
+import VideosPage from './pages/VideosPage';
+import MusicPage from './pages/MusicPage';
+import PicturesPage from './pages/PicturesPage';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from 'react-router-dom';
+import RequireAuth from './Components/RequireAuth';
 
-export default function Home() {
-  return (
-    <div className="container">
-      <main className="main">
-        <h1 className="title">
-          Welcome to <a href="https://thirdweb.com/">thirdweb</a>!
-        </h1>
+const App = () => {
+  const address = useAddress();
 
-        <p className="description">
-          Get started by configuring your desired network in{" "}
-          <code className="code">src/main.jsx</code>, then modify the{" "}
-          <code className="code">src/App.jsx</code> file!
-        </p>
-
-        <div className="connect">
-          <ConnectWallet dropdownPosition={{
-            align: 'center',
-            side: 'bottom'
-          }} />
-        </div>
-
-        <div className="grid">
-          <a href="https://portal.thirdweb.com/" className="card">
-            <h2>Portal &rarr;</h2>
-            <p>
-              Guides, references and resources that will help you build with
-              thirdweb.
-            </p>
-          </a>
-
-          <a href="https://thirdweb.com/dashboard" className="card">
-            <h2>Dashboard &rarr;</h2>
-            <p>
-              Deploy, configure and manage your smart contracts from the
-              dashboard.
-            </p>
-          </a>
-
-          <a href="https://portal.thirdweb.com/templates" className="card">
-            <h2>Templates &rarr;</h2>
-            <p>
-              Discover and clone template projects showcasing thirdweb features.
-            </p>
-          </a>
-        </div>
-      </main>
-    </div>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<GeneralLayout />}>
+        <Route index element={<HomePage />} />
+        <Route element={<RequireAuth address={address} />}>
+          <Route path='dashboard' element={<DashBoardLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path='video' element={<VideosPage />} />
+            <Route path='music' element={<MusicPage />} />
+            <Route path='picture' element={<PicturesPage />} />
+          </Route>
+        </Route>
+        <Route path='about' element={<AboutPage />} />
+        <Route path='*' element={<Errorpage />} />
+      </Route>
+    )
   );
-}
+  return <RouterProvider router={router} />;
+};
+
+export default App;

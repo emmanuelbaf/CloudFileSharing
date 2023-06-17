@@ -1,0 +1,73 @@
+@use '../../../styles/abstract/' as a;
+
+.filesInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+  color: var(--primaryBlack);
+  margin-top: a.$margin-tiny;
+  margin-bottom: auto;
+  padding-left: a.$padding-small;
+  padding-right: a.$padding-medium;
+
+  &__titleContainer {
+    text-align: left;
+    margin-bottom: auto;
+    margin-right: auto;
+    h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      text-transform: capitalize;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    text-transform: capitalize;
+    & thead {
+      font-size: 1.1rem;
+      font-weight: a.weight(bold);
+      background: #e2e2e5;
+    }
+
+    & thead tr {
+      height: a.rem(60);
+    }
+    & thead tr th {
+      text-align: left;
+      letter-spacing: 0.05rem;
+    }
+
+    & tbody {
+      font-size: 1rem;
+      font-weight: a.weight(regular);
+    }
+
+    & tbody tr {
+      height: a.rem(40);
+    }
+
+    & tbody tr td:first-child {
+      padding-left: 1rem;
+    }
+  }
+
+  &__tableText {
+    margin: auto;
+  }
+
+  &__tableHeaderCellOne {
+    width: 60%;
+    padding: 0.5rem 1rem;
+  }
+
+  &__infoRow {
+    text-align: center;
+    padding-block: 3rem;
+    font-weight: a.weight(bold);
+  }
+}

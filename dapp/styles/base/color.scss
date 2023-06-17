@@ -1,0 +1,24 @@
+@use '../abstract/' as a;
+
+:root {
+  --primaryBlue: rgb(0, 86, 242);
+  --primaryBlueHover: rgb(0, 86, 242, 0.8);
+  --primaryWhite: rgb(255, 255, 255, 0.8);
+  --primaryBlack: rgb(0, 0, 0);
+  --primaryTextColor: rgb(242, 242, 242);
+  --headerBgColor: rgba(64, 64, 64, 0.5);
+  // --headerBgColor2: #bbbaba;
+  --headerBgColor2: #acacac;
+  --radialGradient: radial-gradient(
+    112.7% 139.4% at 140.1% -39.2%,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  --radialGradientHover: radial-gradient(
+    75% 94.9% at 100% 2%,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  --fontFamily1: 'Six Caps', 'Six Caps Placeholder', sans-serif;
+  --fontFamily2: 'Roboto', sans-serif;
+}
