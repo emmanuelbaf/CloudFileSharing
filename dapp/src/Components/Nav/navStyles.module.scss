@@ -24,6 +24,7 @@
     margin-right: auto;
     gap: 0.5rem;
     @include a.centerItem;
+    cursor: pointer;
   }
 
   &__logoIconContainer {

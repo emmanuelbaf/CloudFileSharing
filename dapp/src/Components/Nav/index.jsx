@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ConnectWallet, useAddress } from '@thirdweb-dev/react';
 import styles from './navStyles.module.scss';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -8,14 +8,20 @@ const Nav = () => {
   const address = useAddress();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (address) {
+      navigate('dashboard');
+    }
+  }, [address, navigate]);
+
   const handleNavigate = () => {
-    address && navigate('dashboard');
+    navigate('/');
   };
 
   return (
     <header className={styles.header}>
       <div className={styles.header__navLogoContainer}>
-        <div className={styles.header__logoContainer}>
+        <div className={styles.header__logoContainer} onClick={handleNavigate}>
           <div className={styles.header__logoIconContainer}>
             <img src={CUBE} alt='cube Icon' />
           </div>
@@ -23,13 +29,21 @@ const Nav = () => {
         </div>
         <nav className={styles.header__nav}>
           <ul className={styles.header__linksContainer}>
-            <NavLink to='dashboard' className={styles.header__link}>
-              <li>Dashboard</li>
+            {address && (
+              <>
+                <NavLink to='dashboard' className={styles.header__link}>
+                  <li>Dashboard</li>
+                </NavLink>
+                <NavLink to='dashboard' className={styles.header__link}>
+                  <li>Admin</li>
+                </NavLink>
+              </>
+            )}
+            <NavLink to='about' className={styles.header__link}>
+              <li>About</li>
             </NavLink>
-            <NavLink to='dashboard' className={styles.header__link}>
-              <li>Admin</li>
-            </NavLink>
-            <li onClick={handleNavigate}>
+
+            <li>
               <ConnectWallet
                 colorMode='light'
                 btnTitle='Get Started'
