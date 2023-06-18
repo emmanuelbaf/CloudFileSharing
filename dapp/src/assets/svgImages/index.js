@@ -9,6 +9,7 @@ import UPLOADED from './uploaded.svg';
 import ALL from './all.svg';
 import SEARCH from './search.svg';
 import LOGOUT from './logOut.svg';
+import SUCCESS from './successIcon2.svg';
 
 export {
   MUSIC,
@@ -22,4 +23,5 @@ export {
   ALL,
   SEARCH,
   LOGOUT,
+  SUCCESS,
 };
