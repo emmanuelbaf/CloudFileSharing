@@ -34,9 +34,6 @@ const Nav = () => {
                 <NavLink to='dashboard' className={styles.header__link}>
                   <li>Dashboard</li>
                 </NavLink>
-                <NavLink to='dashboard' className={styles.header__link}>
-                  <li>Admin</li>
-                </NavLink>
               </>
             )}
             <NavLink to='about' className={styles.header__link}>

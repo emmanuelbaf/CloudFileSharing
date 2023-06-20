@@ -1,8 +1,9 @@
 import FilesInfo from '../../Components/FilesInfo';
-import styles from './dashBoardStyles.module.scss';
+import { useDashboardContext } from '../../utilities/DashboardContext';
 
 const Dashboard = () => {
-  return <FilesInfo />;
+  const { uploadCount } = useDashboardContext();
+  return <FilesInfo key={uploadCount} />;
 };
 
 export default Dashboard;

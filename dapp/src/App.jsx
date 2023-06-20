@@ -10,6 +10,7 @@ import AboutPage from './pages/AboutPage';
 import VideosPage from './pages/VideosPage';
 import MusicPage from './pages/MusicPage';
 import PicturesPage from './pages/PicturesPage';
+import { DashboardProvider } from './utilities/DashboardContext';
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -38,7 +39,11 @@ const App = () => {
       </Route>
     )
   );
-  return <RouterProvider router={router} />;
+  return (
+    <DashboardProvider>
+      <RouterProvider router={router} />
+    </DashboardProvider>
+  );
 };
 
 export default App;
