@@ -51,8 +51,16 @@
       height: a.rem(40);
     }
 
+    & tbody tr td {
+      height: 3rem;
+      padding-block: 1.1rem;
+    }
+
     & tbody tr td:first-child {
       padding-left: 1rem;
+    }
+    & tbody tr td:nth-child(2) {
+      width: 20%;
     }
   }
 
@@ -69,5 +77,32 @@
     text-align: center;
     padding-block: 3rem;
     font-weight: a.weight(bold);
+  }
+
+  &__buttonContainer {
+    width: 100%;
+    height: 100%;
+    @include a.centerItem;
+    justify-content: flex-start;
+    gap: 1.4rem;
+
+    button {
+      width: 10rem;
+      height: 2.5rem;
+      border-radius: a.$border-radius;
+      border: none;
+      outline: none;
+      font-weight: a.weight(bold);
+      text-transform: capitalize;
+      font-size: 0.8rem;
+      letter-spacing: 0.03rem;
+      background: hwb(233 16% 42% / 0.69);
+      color: var(--primaryWhite);
+      transition: all 0.3s;
+      &:hover {
+        background: #3e4cb6;
+        cursor: pointer;
+      }
+    }
   }
 }

@@ -1,0 +1,39 @@
+@use '../../../styles/abstract/' as a;
+
+.result {
+  width: a.rem(500);
+  height: 10 vh;
+  background: #ffffff;
+  border-radius: a.$border-radius;
+  color: var(--primaryBlack);
+  padding: a.$padding-medium;
+  @include a.centerItem;
+  letter-spacing: 0.05rem;
+
+  &__successContainer {
+    width: a.rem(80);
+    height: a.rem(80);
+    @include a.centerItem;
+    margin-bottom: 0;
+    // overflow: hidden;
+  }
+
+  &__moveText {
+    margin-top: 0;
+  }
+}
+
+.increaseWidth {
+  height: 18vh;
+  width: a.rem(450);
+  flex-direction: column;
+}
+
+.red {
+  color: red;
+  letter-spacing: normal;
+}
+
+.green {
+  color: green;
+}
