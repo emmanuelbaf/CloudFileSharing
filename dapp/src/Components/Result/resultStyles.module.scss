@@ -2,7 +2,7 @@
 
 .result {
   width: a.rem(500);
-  height: 10 vh;
+  height: 10vh;
   background: #ffffff;
   border-radius: a.$border-radius;
   color: var(--primaryBlack);
@@ -21,6 +21,15 @@
   &__moveText {
     margin-top: 0;
   }
+
+  &__list {
+    // display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    line-height: 1.5;
+  }
 }
 
 .increaseWidth {
@@ -30,10 +39,16 @@
 }
 
 .red {
-  color: red;
+  color: rgb(233, 45, 45);
   letter-spacing: normal;
+  // text-transform: capitalize;
 }
 
 .green {
   color: green;
+}
+
+.errorText {
+  height: 45vh;
+  flex-direction: column;
 }

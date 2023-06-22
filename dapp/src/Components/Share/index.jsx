@@ -34,8 +34,8 @@ const Share = (props) => {
 
       setIsSuccessful(true);
     } catch (err) {
+      console.error('contract call failure', err);
       setIsError(true);
-      console.error('contract call failure', err.message);
     } finally {
       props.setIsLoading(false);
       setReceiver('');
@@ -49,7 +49,11 @@ const Share = (props) => {
       ) : isSuccessful ? (
         <Result text='Successful!' color='green' />
       ) : isError ? (
-        <Result text='An Error occurred!!!' color='red' />
+        <Result
+          text='An Error Occurred!!!'
+          color='red'
+          errorMessage='errorText'
+        />
       ) : (
         <div
           className={styles.share}
@@ -61,7 +65,7 @@ const Share = (props) => {
             <span className={styles.share__error}>{error.message}</span>
           )}
           <label htmlFor='address' className={styles.share__label}>
-            Input receiver&#39;s address
+            Input recipient&#39;s address
           </label>
           <input
             type='text'

@@ -24,6 +24,15 @@ const UploadFile = () => {
   const { contract } = useContract(contractAddress);
   const { mutateAsync: addCID } = useContractWrite(contract, 'addCID');
 
+  // **********GETCIDs FUNCTIONS***********************
+
+  // const handleGetUserCIDs = async () => {
+  //   const data = await contract.call('getUserCIDs', []);
+  //   console.log(data);
+  // };
+
+  //  *****************************************
+
   const closeModal = () => {
     if (!isLoading) {
       setShowModal(false);
