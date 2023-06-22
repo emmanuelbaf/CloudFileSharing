@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './filesInfoStyles.module.scss';
-import { url, data } from '../../utilities/utils';
+import { useContractRead, useContract } from '@thirdweb-dev/react';
+import { url, data, contractAddress } from '../../utilities/utils';
 import Modal from '../Modal';
 import Share from '../Share';
 
@@ -10,6 +11,8 @@ const FilesInfo = () => {
   const [isLoading, setIsLoading] = useState(false);
   const addr = window.location.href.split('/');
   const title = addr[addr.length - 1];
+  const { contract } = useContract(contractAddress);
+  // const { data: Uris } = useContractRead(contract, 'getUserCIDs', []);
 
   const handleOpenModal = (addrs) => {
     setUri(addrs);
